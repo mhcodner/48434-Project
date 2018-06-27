@@ -47,10 +47,6 @@
 // Using the lab3lib
 #include "Flash.h"
 
-// ----------------------------------------
-// PRIVATE GLOBAL VARIABLES
-// ----------------------------------------
-
 // Tower Protocol command bytes
 #define CMD_ANALOGGET 0x11
 #define CMD_DORVALUES 0x12

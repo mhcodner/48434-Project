@@ -19,7 +19,7 @@
  *
  *  Enables the PIT and freezes the timer when debugging.
  *  @param moduleClk The module clock rate in Hz.
- *  @param pointer to array of semaphores for signaling in the ISR
+ *  @param semaphore to array of semaphores for signaling in the ISR
  *  @return bool - TRUE if the PIT was successfully initialized.
  *  @note Assumes that moduleClk has a period which can be expressed as an integral number of nanoseconds.
  */
