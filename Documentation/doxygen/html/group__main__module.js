@@ -1,0 +1,26 @@
+var group__main__module =
+[
+    [ "__attribute__", "group__main__module.html#ga445500277ba0e363873b34cffc015745", null ],
+    [ "FIFO_Get", "group__main__module.html#ga6407e3daf24a826a7f17d3e48865e89a", null ],
+    [ "FIFO_Init", "group__main__module.html#gad9207f49ab9ed061b6dca6063112ca60", null ],
+    [ "FIFO_Put", "group__main__module.html#gace64ba4e6bd943f990a294693156cc3b", null ],
+    [ "HandleAnalogGetPacket", "group__main__module.html#gac30606b79413b487e73dac23f591be4a", null ],
+    [ "HandleDORValuesPacket", "group__main__module.html#ga75733e9ade3cc030a8981653259f0136", null ],
+    [ "HandlePacket", "group__main__module.html#gab7a5cb735555819b24719d6078028181", null ],
+    [ "HandleSetCharPacket", "group__main__module.html#ga252d4f3523c9e44b9c404c9682331ecc", null ],
+    [ "HandleSetModePacket", "group__main__module.html#ga9ea461c220078e580f655d0904e06a15", null ],
+    [ "Packet_Get", "group__main__module.html#gac58a17928cd5e556e1567b2fde9f88f0", null ],
+    [ "Packet_Init", "group__main__module.html#ga414aa3f521fdfd6e4586d98a946b6ab2", null ],
+    [ "Packet_Put", "group__main__module.html#ga431a1e1da25a8214a502ec81f88fc3f1", null ],
+    [ "PacketThread", "group__main__module.html#ga94108820cbd6ec7384be98059164df0e", null ],
+    [ "PIT_Enable", "group__main__module.html#gaed902f6158d6681e4b05d078575e4b09", null ],
+    [ "PIT_GetTime", "group__main__module.html#ga9ed891dffd7e79883573987184631b61", null ],
+    [ "PIT_Init", "group__main__module.html#ga917cbc0a1cc3170383fe09ffdf83be94", null ],
+    [ "PIT_Set", "group__main__module.html#gae012c6f6b7396828c558c92ad0a27ed5", null ],
+    [ "SamplingThread", "group__main__module.html#gaf57aa549d9f31f77159135d6d2ae8de1", null ],
+    [ "TripThread", "group__main__module.html#ga1a74db037b63425694b8fc3365b59ec2", null ],
+    [ "UART_InChar", "group__main__module.html#ga03049bcc3bf9af2a75ee77016d3b0d60", null ],
+    [ "UART_Init", "group__main__module.html#gae5760d1a086ec79a33901db253000af9", null ],
+    [ "UART_OutChar", "group__main__module.html#gab20ebaeefd1f29d31e098ade31189dda", null ],
+    [ "UART_Poll", "group__main__module.html#ga799b375101827a18f652a3f28ecefcd0", null ]
+];
