@@ -119,7 +119,7 @@ static float a[3] = {
 extern FAULT LastFault;
 extern TDORThreadData DORThreadData[NB_ANALOG_CHANNELS];
 
-/* @brief Thread for the initialising the tower
+/* @brief Thread for initialising the tower
  *
  */
 static void InitThread(void *pData)
@@ -181,7 +181,7 @@ static void InitThread(void *pData)
                 .offset2 = 0,
                 .sampleOffset = 0,
             },
-    };
+        };
 
     bool analogStatus = Analog_Init(CPU_BUS_CLK_HZ);
     bool packetStatus = Packet_Init(BAUD_RATE, CPU_BUS_CLK_HZ);
@@ -309,7 +309,7 @@ static void InputThread(void *pData)
       if (data->iRMS >= iRMSThreshold)
         handleTrip(data);
       else if (data->timerStatus == TIMER_ACTIVE)
-          data->timerStatus = TIMER_INACTIVE; // Deactivate the channel
+        data->timerStatus = TIMER_INACTIVE; // Deactivate the channel
 
       // Reset counter position
       count = 0;
@@ -410,14 +410,14 @@ static void frequencyTracking(TDORThreadData *channelData, uint8_t count)
         case 2:
           channelData->offset2 = calculateTimeOffset(channelData->samples[count - 1], channelData->samples[count]);
           double new_period = (channelData->sampleOffset - channelData->offset1 + channelData->offset2) * ((float)PIT_PERIOD / 1e9); // Period of wave in s
-          double frequency = (1 / (new_period));                                                                                            // Calculate frequency
+          double frequency = (1 / (new_period));                                                                                     // Calculate frequency
 
           // Filter 'bad' frequencies
           if (frequency >= 47.5 && frequency <= 52.5)
           {
-            Frequency = frequency;                            // Set global frequency
-            PIT_PERIOD = ((1 / frequency) / 16) * 1e9; 	      // Period in nanoseconds
-            PIT_Set(0, PIT_PERIOD, true);                     // Redefine PIT period and restart
+            Frequency = frequency;                     // Set global frequency
+            PIT_PERIOD = ((1 / frequency) / 16) * 1e9; // Period in nanoseconds
+            PIT_Set(0, PIT_PERIOD, true);              // Redefine PIT period and restart
           }
           channelData->crossingNb = 1;
           break;
@@ -432,7 +432,7 @@ static void frequencyTracking(TDORThreadData *channelData, uint8_t count)
 /*!
  * @brief Handles the tripping of a signal when iRMS >= 1.03
  *
- * @param pointer to channel target data
+ * @param channelData - pointer to channel target data
  */
 static void handleTrip(TDORThreadData *channelData)
 {
@@ -470,6 +470,8 @@ static void handleTrip(TDORThreadData *channelData)
 /*!
  * @brief Uses linear interpolation to calculate time offset
  *
+ * @param sample1 - the first sample
+ * @param sample2 - the second sample
  * @return float - time offset in ms
  */
 static float calculateTimeOffset(float sample1, float sample2)
@@ -504,6 +506,7 @@ static float fsqrt(float n)
 /*!
  * @brief Converts analogue input into voltage in Volts
  *
+ * @param raw - the analogue value to convert
  * @return float - voltage value
  */
 static float rawToVoltage(int16_t raw)
@@ -514,6 +517,7 @@ static float rawToVoltage(int16_t raw)
 /*!
  * @brief Converts analogue input into voltage in Volts
  *
+ * @param voltage - the voltage to convert
  * @return float - voltage value
  */
 static uint16_t voltageToRaw(float voltage)
@@ -552,7 +556,7 @@ static double calculateTiming(double iRMS)
 }
 
 /*!
- * @brief Reset DOR channels
+ * @brief Resets DOR channels
  */
 static void resetDOR()
 {
@@ -560,7 +564,7 @@ static void resetDOR()
   PIT_Enable(0, false);
   PIT_Enable(1, false);
 
-  // Restore DOR channel data to initial state
+  // Restore each DOR channel data to initial state
   for (uint8_t analogNb = 0; analogNb < NB_ANALOG_CHANNELS; analogNb++)
   {
     resetChannel(analogNb);

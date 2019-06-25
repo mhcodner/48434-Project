@@ -31,6 +31,7 @@ bool PIT_Init(const uint32_t moduleClk);
 
 /*! @brief Sets the value of the desired period of the PIT.
  *
+ *  @param channelNb the channel to be set
  *  @param period The desired value of the timer period in nanoseconds.
  *  @param restart TRUE if the PIT is disabled, a new value set, and then enabled.
  *                 FALSE if the PIT will use the new value after a trigger event.
@@ -40,6 +41,7 @@ void PIT_Set(uint8_t channelNb, const uint32_t period, const bool restart);
 
 /*! @brief Enables or disables the PIT.
  *
+ *  @param channelNb the channel to be enabled
  *  @param enable - TRUE if the PIT is to be enabled, FALSE if the PIT is to be disabled.
  */
 void PIT_Enable(uint8_t channelNb, const bool enable);
